@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <title>Global Fund MASS Distribution Template</title>
+  <style>
+    INJECT_NORMALIZE_CSS
+  </style>
+  <style>
+    INJECT_PAPER_CSS
+  </style>
+  <style>
+    .sheet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(6, 19.5%); /* why isn't this 16.7%? */
+      margin: 0;
+      padding:0;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .item {
+      border : 0;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-rows: 15% 70% 15%;
+    }
+
+    .item-logo-ima {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .item-top {
+      grid-column: 2;
+      grid-row: 1;
+      margin-top:5px;
+    }
+
+    .item-logo-pnlp {
+      grid-column: 3;
+      grid-row: 1;
+    }
+
+    .item-qrcode {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    .item-hrcode {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row: 3;
+
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-bottom:5px;
+    }
+
+    .sheet * {
+      text-align:center;
+    }
+
+    @page { size : A4; margin: 0; }
+  </style>
+  </head>
+
+  <body class="A4">
+    INJECT_CONTENT
+  </body>
+</html>
