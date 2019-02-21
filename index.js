@@ -10,7 +10,7 @@ const globby = require('globby');
 
 // globals
 const NUM_TICKETS = 150;
-const CHUNK_SIZE = 10;
+const CHUNK_SIZE = 12;
 const TEMP_DIR = tempy.directory();
 
 const normalizeCSS = fs.readFileSync('./node_modules/normalize.css/normalize.css', 'utf8');

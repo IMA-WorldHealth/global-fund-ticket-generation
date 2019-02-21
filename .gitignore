@@ -11,7 +11,7 @@ package-lock.json
 *.gz, *.xz, *.zip
 
 # ignore bad file types.  These should never be version-controlled
-*.pdf, *.doc, *.docx, *.odt, *.xls, *.xlsx
+*.pdf, *.doc, *.docx, *.odt, *.xls, *.xlsx, tickets.pdf
 
 # ignore npm/node modules
 node_modules/
