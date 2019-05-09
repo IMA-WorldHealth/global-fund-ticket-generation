@@ -10,8 +10,11 @@ const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
 // globals
-const TOTAL_NUMBER_OF_TICKETS = 8000000;
+// const TOTAL_NUMBER_OF_TICKETS = 8000000;
 const BATCH_SIZE = 25008; // batch size to make
+// const TOTAL_NUMBER_OF_TICKETS = 1000000;
+const TOTAL_NUMBER_OF_TICKETS = 80001;
+
 const PAGE_SIZE = 12; // size of a page.
 const TEMP_DIR = tempy.directory();
 
@@ -113,11 +116,10 @@ async function renderTemplatesFromRange(i, j, statusbar) {
     await page.setContent(content);
 
     const path = `${TEMP_DIR}/tickets-${index++}.pdf`;
+    files.push(path);
     await page.pdf({ path, format: 'A4' });
 
     await page.close();
-
-    files.push(path);
 
     statusbar.tick();
   }
@@ -125,7 +127,7 @@ async function renderTemplatesFromRange(i, j, statusbar) {
   await browser.close();
 
   console.log('Consolidating all paths into a single path.');
-  const fname = `tickets-${i}-${j}.pdf`;
+  const fname = `output/tickets-${i}-${j}.pdf`;
   await pdfMerge(files, { output: fname });
 
   console.log(`Zipping PDFs into ${fname}.xz`);
@@ -154,9 +156,11 @@ async function makeBatchOfTickets(i, j, statusbar) {
     const statusbar = new Progress('[:bar] :percent :etas', { total: (TOTAL_NUMBER_OF_TICKETS * 2) });
 
     let i = 1;
+    let j = i + BATCH_SIZE;
     while (i <= TOTAL_NUMBER_OF_TICKETS) {
-      await makeBatchOfTickets(i, BATCH_SIZE, statusbar);
+      await makeBatchOfTickets(i, j, statusbar);
       i += BATCH_SIZE;
+      j = i + BATCH_SIZE;
     }
 
     console.log('Done!');
