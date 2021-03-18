@@ -9,7 +9,7 @@
     "progress": "^2.0.3",
     "puppeteer-core": "^8.0.0",
     "qrcode": "^1.4.4",
-    "tempy": "^1.0.0"
+    "tempy": "^1.0.1"
   },
   "devDependencies": {
     "eslint": "^7.23.0",
