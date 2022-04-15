@@ -7,7 +7,7 @@
     "paper-css": "^0.4.1",
     "pdf-merge": "^1.2.0",
     "progress": "^2.0.3",
-    "puppeteer-core": "^8.0.0",
+    "puppeteer-core": "^13.5.2",
     "qrcode": "^1.4.4",
     "tempy": "^1.0.1"
   },
