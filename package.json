@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "fs-extra": "^10.0.0",
+    "fs-extra": "^10.0.1",
     "globby": "^13.1.1",
     "lodash.chunk": "^4.2.0",
     "normalize.css": "^8.0.1",
