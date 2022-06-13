@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "fs-extra": "^10.0.1",
-    "globby": "^13.1.1",
+    "globby": "^13.1.2",
     "lodash.chunk": "^4.2.0",
     "normalize.css": "^8.0.1",
     "paper-css": "^0.4.1",
