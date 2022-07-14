@@ -8,7 +8,7 @@
     "pdf-merge": "^1.2.0",
     "progress": "^2.0.3",
     "puppeteer-core": "^14.1.1",
-    "qrcode": "^1.5.0",
+    "qrcode": "^1.5.1",
     "tempy": "^1.0.1"
   },
   "devDependencies": {
